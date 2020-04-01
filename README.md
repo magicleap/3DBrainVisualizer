@@ -1,6 +1,8 @@
 # 3DBrainVisualizer
 A simple 3D Visualization and Education application about the human brain using Magic Leap Toolkit.
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ## Prerequisites
 * A Magic Leap Device running the latest version of Lumin OS 0.98.10
 * Lumin SDK 0.24.1
