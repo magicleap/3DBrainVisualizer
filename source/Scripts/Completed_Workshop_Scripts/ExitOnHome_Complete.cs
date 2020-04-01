@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class ExitOnHome_Complete : MonoBehaviour
 {
-    public void Start()
-    {
-        
-    }
-
-    public void Update()
-    {
-        
-    }
+    //Quits application or stops playmode in Unity Editor
     public void ExitApp()
     {
 #if UNITY_EDITOR

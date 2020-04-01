@@ -4,42 +4,32 @@ using UnityEngine;
 using MagicLeapTools;
 
 public class ShowUI_Complete : MonoBehaviour
-{
-    private bool _enabled =  false; 
-    public PointerReceiver pointer;
+{ 
+    private PointerReceiver _pointer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        pointer = GetComponentInParent<PointerReceiver>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Function to switch UI betwen enabled and disabled states
+    //while user is dragging parent object
     public void EnableUI()
     {
-        if(pointer != null)
+        //Check if there is a reference to pointer receiver
+        if(_pointer == null)
         {
-            if (pointer.Dragging)
-            {
-                _enabled = !_enabled;
-                gameObject.SetActive(_enabled);
-            }
+            //Get pointer receiver component from parent
+            _pointer = GetComponentInParent<PointerReceiver>();
         }
-        else
+
+        //Check if the state of the pointer is in a dragging state
+        if (_pointer != null && _pointer.Dragging)
         {
-            Debug.Log("Null Pointer in Parent");
-        }
+            //Set game object active status to opposite of current status
+            gameObject.SetActive(!gameObject.activeSelf);
+        }       
     }
 
-    public void HideUI()
+    //Disables UI regardless of what current state UI is in
+    public void DisableUI()
     {
-        _enabled = false;
-        gameObject.SetActive(_enabled);
+        gameObject.SetActive(false);
     }
 
 
